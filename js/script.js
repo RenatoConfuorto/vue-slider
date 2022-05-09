@@ -33,4 +33,15 @@ const app = new Vue({
         ],
         currentPic: 0,
     },
+    methods: {
+        prevSlide: function(){
+            //modificare l'indeice dell'immagine corrente
+            this.currentPic = this.currentPic === 0 ? this.currentPic = (this.elements.length - 1) : this.currentPic - 1;
+        },
+        
+        nextSlide: function(){
+            this.currentPic = this.currentPic === (this.elements.length - 1) ? this.currentPic = 0 : this.currentPic + 1;
+        },
+        
+    },
 });

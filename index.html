@@ -24,7 +24,7 @@
                 </div>
             </div>
             -->
-            <div class="item" v-for="item in elements">
+            <div class="item" :class="{active : index === currentPic}" v-for="(item, index) in elements">
                 <img :src="item.image" :alt="item.title">
                 <div class="text">
                     <h3>{{ item.title }}</h3>
@@ -38,10 +38,10 @@
                 <img src="./img/01.jpg" alt="">
             </div>
             -->
-            <div class="prev"></div>
-            <div class="next"></div>
-            <div class="thumb" v-for="item in elements">
-                <img :src="item.image" alt="">
+            <div class="prev" @click="prevSlide"></div>
+            <div class="next" @click="nextSlide"></div>
+            <div class="thumb" :class="{active : index === currentPic}" v-for="(item, index) in elements">
+                <img :src="item.image" :alt="item.title">
             </div>
             
         </div>
