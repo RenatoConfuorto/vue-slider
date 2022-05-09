@@ -24,6 +24,13 @@
                 </div>
             </div>
             -->
+            <div class="item" v-for="item in elements">
+                <img :src="item.image" :alt="item.title">
+                <div class="text">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.text }}</p>
+                </div>
+            </div>
         </div>
         <div class="thumbs">
             <!--
@@ -33,6 +40,10 @@
             -->
             <div class="prev"></div>
             <div class="next"></div>
+            <div class="thumb" v-for="item in elements">
+                <img :src="item.image" alt="">
+            </div>
+            
         </div>
    </div>
 
