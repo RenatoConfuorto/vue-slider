@@ -43,5 +43,8 @@ const app = new Vue({
             this.currentPic = this.currentPic === (this.elements.length - 1) ? this.currentPic = 0 : this.currentPic + 1;
         },
         
+        makeActive: function(index){
+            this.currentPic = index;
+        },
     },
 });

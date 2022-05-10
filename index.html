@@ -40,7 +40,12 @@
             -->
             <div class="prev" @click="prevSlide"></div>
             <div class="next" @click="nextSlide"></div>
-            <div class="thumb" :class="{active : index === currentPic}" v-for="(item, index) in elements">
+            <div
+            class="thumb"
+            :class="{active : index === currentPic}"
+            v-for="(item, index) in elements"
+            @click="makeActive(index)"
+            >
                 <img :src="item.image" :alt="item.title">
             </div>
             
