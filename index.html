@@ -38,8 +38,8 @@
                 <img src="./img/01.jpg" alt="">
             </div>
             -->
-            <div class="prev" @click="prevSlide"></div>
-            <div class="next" @click="nextSlide"></div>
+            <div class="prev" @click="prevSlide(); resetTimer();"></div>
+            <div class="next" @click="nextSlide(); resetTimer();"></div>
             <div
             class="thumb"
             :class="{active : index === currentPic}"

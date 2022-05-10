@@ -32,6 +32,7 @@ const app = new Vue({
             
         ],
         currentPic: 0,
+        timer: null,
     },
     methods: {
         prevSlide: function(){
@@ -46,5 +47,22 @@ const app = new Vue({
         makeActive: function(index){
             this.currentPic = index;
         },
+
+        startTimer: function(){
+            timer = setInterval(this.nextSlide, 3000);
+        },
+
+        stopTimer: function(){
+            clearInterval(timer);
+        },
+
+        resetTimer: function(){
+            console.log('restart timer')
+            this.stopTimer();
+            this.startTimer();
+        },
     },
+    created: function(){
+        this.startTimer();
+    }
 });
